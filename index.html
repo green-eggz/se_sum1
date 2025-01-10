@@ -11,12 +11,15 @@
     </head> 
     
     <body> <!-- This contains the content to be displayed -->
-        <div class="container"> <!-- This groups the content into a container so it can be styled with CSS -->
-            <h1>Skycast</h1> <!-- Main heading for the page -->
-            <p id="location">Loading location...</p>
-            <p id="temperature">Loading temperature...</p> 
-            <p id="weather-description">Loading weather description...</p>
-            <p id="weather-icon"></p>
+        <div id="container"> <!-- This groups the content into a container so it can be styled with CSS -->
+            <h1 id="heading">Skycast</h1><!-- Main heading for the page -->
+            
+            <div id="weather-box">
+                <p id="location"></p>
+                <i id="weather-icon"></i>
+                <p id="temperature"></p> 
+                <p id="weather-description"></p>   
+            </div> 
         </div> 
 
         <script src="app.js"></script> <!-- Link to JS file -->
