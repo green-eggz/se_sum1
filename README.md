@@ -51,8 +51,22 @@ Useful resource to check constrast:
 https://webaim.org/resources/contrastchecker/
 
 ## Implementation
+### APIs
+#### Weather API
+I have chosen to use Open Meteo as the API to get the weather data from. This is because it does not require an API key and has a large limit for the number of daily calls (10,000) compared to other APIs that I looked at. It also uses longitude and latitude to locate place so this will be useful for getting to specific airports. 
+
+The Open Meteo API contains weather codes which need to be mapped to descriptions to make them understandable to the user. The mapping from the documentation is below \
+![](docs/code-map.png)
+
+#### Geography API
+I also needed to use an API for geolocation to turn airport codes into coordinates. I chose to use Searoutes as it had the exact functionality required.
 
 ### Minimal Viable Product
+The very first iteration of this was created with one hard coded airport to test the ability of calling both APIs. It has not been formatted at all either. \
+![](docs/draft1.png)
+
+The second iteration, once the CSS had been applied, tidied up the look and made it more professional. 
+![](docs/draft2.png)
 
 ### Test Driven Development
 Accessibility testing: Lighthouse

@@ -14,6 +14,9 @@
 
 /* Apply global styles */
 body {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    min-height: 100vh;
     font-family: var(--body-font); /* Use the body font */
     background-color: var(--background-colour);
     color: var(--text-colour);
@@ -21,6 +24,39 @@ body {
     padding: 0;
 }
 
-h1 {
+/* Container that holds everything */
+#container {
+    width: 100%;              /* Optional: make the container take full width */
+    max-width: 600px;         /* Optional: max width for content */
+    padding: 20px;
+    text-align: center;       /* Centers text inside the container */
+}
+
+/* Heading style */
+#heading {
+    font-size: 75px;
     font-family: var(--heading-font); /* Apply the heading font */
+    text-align: center;
+    margin-bottom: 20px;      /* Adds space between heading and weather box */
+}
+
+/* Weather box styling */
+#weather-box {
+    background-color: #f9f9f9;   /* Light background for the weather box */
+    border: 1px solid #ddd;       /* Border around the box */
+    border-radius: 8px;           /* Optional rounded corners */
+    padding: 20px;                /* Padding inside the box */
+}
+
+/* Styling for individual weather info */
+#weather-box p {
+    font-size: 24px;        /* Make the text a bit larger */
+    margin: 10px 0;           /* Adds space between paragraphs */
+}
+
+/* Styling for the weather icon */
+#weather-icon {
+    font-size: 62px;          /* Make the icon larger */
+    margin-top: 10px;          /* Adds space between the icon and text */
+    color:var(--accent-colour-1) ;
 }
