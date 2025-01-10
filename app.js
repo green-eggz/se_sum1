@@ -48,6 +48,7 @@ fetch(apiUrl)
         // Update the HTML with the fetched data
         document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
         document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`;
+        document.getElementById('coordinates').textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
     })
     .catch(error => console.error('Error:', error));  // Log any errors that occur
 
