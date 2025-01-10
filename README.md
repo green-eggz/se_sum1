@@ -65,6 +65,9 @@ I also needed to use an API for geolocation to turn airport codes into coordinat
 The very first iteration of this was created with one hard coded airport to test the ability of calling both APIs. It has not been formatted at all either. \
 ![](docs/draft1.png)
 
+The second iteration, once the CSS had been applied, tidied up the look and made it more professional. 
+![](docs/draft2.png)
+
 ### Test Driven Development
 Accessibility testing: Lighthouse
 
