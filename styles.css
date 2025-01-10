@@ -1,0 +1,26 @@
+/* Use CSS variables to define colours and fonts */
+:root {
+    /* Colours */
+    --background-colour: #E8E9ED;
+    --text-colour: #0B2027;
+    --button-bg-colour: #BABFD1; 
+    --accent-colour-1: #607196;
+    --accent-colour-2: #E8C547;
+    /* Fonts */
+    --body-font: 'Roboto', sans-serif;
+    --heading-font: 'Abril Fatface', serif;
+  }
+
+
+/* Apply global styles */
+body {
+    font-family: var(--body-font); /* Use the body font */
+    background-color: var(--background-colour);
+    color: var(--text-colour);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: var(--heading-font); /* Apply the heading font */
+}
