@@ -1,7 +1,3 @@
-// Hard code coordinates for LHR (London Heathrow airport)
-const latitude = 51.470020;
-const longitude = -0.454295;
-
 // Map weather codes to descriptions
 const weatherCodeMap = {
     0: 'Clear sky',
@@ -64,30 +60,48 @@ const weatherIconMap = {
     
 };
 
-// URL for weather data
-const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+// Searoutes API to get coordinates
+const apiKeySR = 'kJAxcR9XEu4VRZobiLwBd6mUMNk34Aqy7fEBalNZ';
 
-// Fetch data from Open Meteo API
-fetch(apiUrl)
+const iataCode = 'LHR';
+
+// Fetch coordinates from Searoutes API
+const options = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      'x-api-key': 'kJAxcR9XEu4VRZobiLwBd6mUMNk34Aqy7fEBalNZ'
+    }
+  };
+  
+  fetch(`https://api.searoutes.com/geocoding/v2/all?iataCode=${iataCode}`, options)
+
     .then(response => response.json())
     .then(data => {
-        // Extract the data
-        const temperature = data.current_weather.temperature; // Temperature in Celsius
-        const weatherCode = data.current_weather.weathercode; // Weather condition code
-        const weatherDescription = weatherCodeMap[weatherCode] // Map weather code to description
-        const weatherIcon = weatherIconMap[weatherCode] // Map weather code to icon
-
-        // Update the HTML with the fetched data
-        document.getElementById('coordinates').textContent = `Latitude: ${latitude}, Longitude: ${longitude}`;
-        document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
-        document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`;
+        console.log(data);
         
-        const iconElement = document.getElementById('weather-icon');
-        iconElement.classList.add('fas', weatherIcon);
+        const coordinates = data.features[0].geometry.coordinates;
+        const longitude = coordinates[0];
+        const latitude = coordinates[1];
 
+            // Now fetch the weather from Open Meteo using the coordinates
+            fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
+                .then(response => response.json())
+                .then(weatherData => {
+                    // Extract the data
+                    const temperature = weatherData.current_weather.temperature; // Temperature in Celsius
+                    const weatherCode = weatherData.current_weather.weathercode; // Weather condition code
+                    const weatherDescription = weatherCodeMap[weatherCode] // Map weather code to description
+                    const weatherIcon = weatherIconMap[weatherCode] // Map weather code to icon
+
+                    // Update the HTML with the fetched data
+                    document.getElementById('location').textContent = `${iataCode}`;
+                    document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
+                    document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`;
+                    
+                    const iconElement = document.getElementById('weather-icon');
+                    iconElement.classList.add('fas', weatherIcon);
+                })
+                .catch(error => console.error('Error fetching weather data:', error));
     })
-    .catch(error => console.error('Error:', error));  // Log any errors that occur
-
-
-
-
+    .catch(error => console.error('Error fetching coordinates:', error));
