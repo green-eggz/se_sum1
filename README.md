@@ -1,10 +1,62 @@
-# Software Engineering Summative 1 Assignment
+# Skycast - Weather Forecast Web App for Airports
 
 ## Project Description
-I have been tasked with creating a web app that displays the weather for any worldwide airport that a schedule manager may need to look at. This will allow them to take proactive measures to ensure that flights are not delayed due to adverse weather conditions. 
+For the Summative One assignment, I have chosen to create a web app that displays the weather for any worldwide airport. This can be used by colleagues in various roles such as schedule manager who may need to make proactive changes due to adverse weather conditions. 
 
 ## Project Management
-## Minimal Viable Product
-## Test Driven Development
+For project management, I have used the Github Projects kanban board to keep track of features and pull requests. 
+
+## Design
+
+### Prototype
+The prototype for this app has been created in Figma. A screen recording of the prototype can be found below. \
+<video width="320" height="240" controls>
+  <source src="docs/figma_prototype_vid.mp4" type="video/mp4">
+</video>
+Video description: Screen recording of Figma prototype navigating between different pages of the web app \
+A link to the Figma file is here https://www.figma.com/design/N3TybZpRVjDRYOr29QqwhH/Summative-1?node-id=0-1&t=BEyxLwm3nyauWsao-1
+
+### Design Choices
+#### Colours
+Colour palette created using Coolors website https://coolors.co/0b2027-e8c547-607196-babfd1-e8e9ed
+![Colour palette from left to right ](docs/colours.jpg)
+Background colour: light grey \
+Main text colour: dark grey/blue \
+Accent colours: blue and yellow
+
+#### Fonts
+For titles and other stylised words: Abril Fatface https://fonts.google.com/specimen/Abril+Fatface \
+Main body font: Roboto https://fonts.google.com/specimen/Roboto \
+Fallback: Arial
+
+#### Icons
+For the weather icons in this app, I am going to use the free library available with Font Awesome. This can be implemented in HTML and scaled/designed using CSS
+https://fontawesome.com/icons/categories/weather
+
+
+### Accessibility
+Best practises for web app design have been set out here: https://www.w3.org/WAI/tips/designing/ \
+Some of the key takeaways that I will implement are:
+- Have high contrast between text and background
+- Use large and clear font size
+- Design for multiple device types 
+- Make everything accessible by keyboard and/or mouse
+- Transcript or text descriptions for images and video
+- Make html element names useful for screen readers
+- Use tools for accessibly testing
+https://codedamn.com/news/frontend/7-best-practices-accessible-web-applications
+
+
+Useful resource to check constrast: 
+https://webaim.org/resources/contrastchecker/
+
+## Implementation
+
+### Minimal Viable Product
+
+### Test Driven Development
+Accessibility testing: Lighthouse
+
+
 ## Evaluation
 
