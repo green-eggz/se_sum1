@@ -51,6 +51,8 @@ Useful resource to check constrast:
 https://webaim.org/resources/contrastchecker/
 
 ## Implementation
+### Weather API
+I have chosen to use Open Meteo as the API to get the weather data from. This is because it does not require an API key and has a large limit for the number of daily calls (10,000) compared to other APIs that I looked at. It also uses longitude and latitude to locate place so this will be useful for getting to specific airports. 
 
 ### Minimal Viable Product
 
