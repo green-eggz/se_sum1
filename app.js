@@ -60,20 +60,22 @@ const weatherIconMap = {
     
 };
 
-// Searoutes API to get coordinates
-const apiKeySR = 'kJAxcR9XEu4VRZobiLwBd6mUMNk34Aqy7fEBalNZ';
+//const iataCode = 'LHR';
 
-const iataCode = 'LHR';
+// User can now type in airport code
+// Wrapped in a function so it can be read by HTML file button
+function getWeather() {
+    const iataCode = document.getElementById('airport-code').value.toUpperCase();  // convert to uppercase
 
-// Fetch coordinates from Searoutes API
-const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      'x-api-key': 'kJAxcR9XEu4VRZobiLwBd6mUMNk34Aqy7fEBalNZ'
-    }
-  };
-  
+    // Fetch coordinates from Searoutes API
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            'x-api-key': 'kJAxcR9XEu4VRZobiLwBd6mUMNk34Aqy7fEBalNZ'
+        }
+    };
+
   fetch(`https://api.searoutes.com/geocoding/v2/all?iataCode=${iataCode}`, options)
 
     .then(response => response.json())
@@ -98,10 +100,10 @@ const options = {
                     document.getElementById('location').textContent = `${iataCode}`;
                     document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
                     document.getElementById('weather-description').textContent = `Weather: ${weatherDescription}`;
-                    
-                    const iconElement = document.getElementById('weather-icon');
-                    iconElement.classList.add('fas', weatherIcon);
+                    document.getElementById('weather-icon').className = ''; 
+                    document.getElementById('weather-icon').classList.add('fas', weatherIcon); // Changed formatting of this to match the other elements
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
     })
     .catch(error => console.error('Error fetching coordinates:', error));
+}
