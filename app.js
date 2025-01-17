@@ -74,7 +74,7 @@ function getWeather() {
         // Display an error message if the input is not a valid airport code
         document.getElementById('error-message').textContent = `Please enter a valid 3-letter IATA airport code.`;
         document.getElementById('error-message').style.display = 'block';
-        return;
+        return; 
     }
 
     // Fetch coordinates from LocationIQ API
@@ -105,7 +105,7 @@ function getWeather() {
                     const weatherIcon = weatherIconMap[weatherCode] // Map weather code to icon
                     
 
-                    // Show the boxes now
+                    // Show the boxesn now
                     document.getElementById('weather-box').classList.add('show');
                     document.getElementById('search-box').classList.add('show');
 
@@ -117,9 +117,13 @@ function getWeather() {
                     document.getElementById('weather-icon').classList.add('fas', weatherIcon); // Changed formatting of this to match the other elements
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
+                document.getElementById('error-message').style.display = 'none';
         
             } else {
                 console.log('No airport found for the provided code.');
+                 // Show the error message on the screen
+                 document.getElementById('error-message').textContent = `No airport found for the provided code: '${iataCode}'.`;
+                 document.getElementById('error-message').style.display = 'block';
               }
     })
     .catch(error => console.error('Error fetching coordinates:', error));

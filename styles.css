@@ -110,3 +110,18 @@ body {
     opacity: 1;
     max-height: 500px; /* Adjust as needed */
 }
+
+#error-message {
+    border: 1px solid red;
+    background-color: #ffe6e6;
+    color: red;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    font-weight: bold;
+    text-align: center;
+}
+
+
+ 
