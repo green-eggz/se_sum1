@@ -96,6 +96,10 @@ function getWeather() {
                     const weatherDescription = weatherCodeMap[weatherCode] // Map weather code to description
                     const weatherIcon = weatherIconMap[weatherCode] // Map weather code to icon
 
+                     // Show the boxes now
+                     document.getElementById('weather-box').classList.add('show');
+                     document.getElementById('search-box').classList.add('show');
+
                     // Update the HTML with the fetched data
                     document.getElementById('location').textContent = `${iataCode}`;
                     document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;

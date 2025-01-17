@@ -30,6 +30,9 @@ body {
     max-width: 600px;         /* Optional: max width for content */
     padding: 20px;
     text-align: center;       /* Centers text inside the container */
+    display: flex; /* Set the container to be a flexible container */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Ensures all items inside are centered horizontally */
 }
 
 /* Heading style */
@@ -37,15 +40,57 @@ body {
     font-size: 75px;
     font-family: var(--heading-font); /* Apply the heading font */
     text-align: center;
-    margin-bottom: 20px;      /* Adds space between heading and weather box */
 }
 
-/* Weather box styling */
+/* Styling for the weather icon */
+#weather-icon {
+    font-size: 62px;          /* Make the icon larger */
+    margin-top: 10px;          /* Adds space between the icon and text */
+    color:var(--accent-colour-2) ;
+}
+
+/* Styling for search container */
+#search-box {
+    background: #f9f9f9;
+    padding: 20px;  /* Set padding to 20 */
+    border-radius: 8px;   /* Round bottom corners only */
+    width: 350px; /* Set container width to 300 */
+    flex-direction: column; /* This makes the elements stack vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 10px; /* Adds space between input and button */
+}
+
+/* Styling for airport code input box */
+#airport-code {
+    padding: 10px;
+    width: 200px;
+    background-color: #f9f9f9; /* white backgroun */
+    border: 1px solid var(--accent-colour-1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+    
+
+/* Styling the button */
+#button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color:var(--accent-colour-1);
+    color: #fff;
+    border:none;
+}
+
+/* Initially hide the weather box */
 #weather-box {
-    background-color: #f9f9f9;   /* Light background for the weather box */
-    border: 1px solid #ddd;       /* Border around the box */
-    border-radius: 8px;           /* Optional rounded corners */
-    padding: 20px;                /* Padding inside the box */
+    visibility: hidden;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    padding: 20px;  /* Set padding to 20 */
+    border-radius: 0 0 8px 8px;   /* Round bottom corners only */
+    width: 350px; /* Set container width to 300 */
+    flex-direction: column; /* This makes the elements stack vertically */
+    align-items: center; /* Center items horizontally */
 }
 
 /* Styling for individual weather info */
@@ -54,9 +99,14 @@ body {
     margin: 10px 0;           /* Adds space between paragraphs */
 }
 
-/* Styling for the weather icon */
-#weather-icon {
-    font-size: 62px;          /* Make the icon larger */
-    margin-top: 10px;          /* Adds space between the icon and text */
-    color:var(--accent-colour-1) ;
+/* When the weather box is visible */
+#search-box.show {
+    border-radius: 8px 8px 0 0;     /* Round top corners only */
+}
+
+/* Show weather box when it's not hidden */
+#weather-box.show {
+    visibility: visible;
+    opacity: 1;
+    max-height: 500px; /* Adjust as needed */
 }
