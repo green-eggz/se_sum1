@@ -67,25 +67,33 @@ const weatherIconMap = {
 function getWeather() {
     const iataCode = document.getElementById('airport-code').value.toUpperCase();  // convert to uppercase
 
-    // Fetch coordinates from Searoutes API
+    // Regex to match exactly 3 uppercase letters
+    const iataCodePattern = /^[A-Z]{3}$/;
+
+    if (!iataCodePattern.test(iataCode)) {
+        // Display an error message if the input is not a valid airport code
+        document.getElementById('error-message').textContent = `Please enter a valid 3-letter IATA airport code.`;
+        document.getElementById('error-message').style.display = 'block';
+        return;
+    }
+
+    // Fetch coordinates from LocationIQ API
     const options = {
         method: 'GET',
         headers: {
             accept: 'application/json',
-            'x-api-key': 'kJAxcR9XEu4VRZobiLwBd6mUMNk34Aqy7fEBalNZ'
         }
     };
 
-  fetch(`https://api.searoutes.com/geocoding/v2/all?iataCode=${iataCode}`, options)
+    fetch(`https://us1.locationiq.com/v1/search?q=${iataCode}&key=pk.7888b0670eb6596351a70be6dc050408&format=json`, options)
 
     .then(response => response.json())
     .then(data => {
-        console.log(data);
+        const airport = data.find(place => place.class === 'aeroway' && place.type === 'aerodrome'); //Limit search to airports only
+        if (airport) {
+            const latitude = airport.lat;
+            const longitude = airport.lon;
         
-        const coordinates = data.features[0].geometry.coordinates;
-        const longitude = coordinates[0];
-        const latitude = coordinates[1];
-
             // Now fetch the weather from Open Meteo using the coordinates
             fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`)
                 .then(response => response.json())
@@ -95,10 +103,11 @@ function getWeather() {
                     const weatherCode = weatherData.current_weather.weathercode; // Weather condition code
                     const weatherDescription = weatherCodeMap[weatherCode] // Map weather code to description
                     const weatherIcon = weatherIconMap[weatherCode] // Map weather code to icon
+                    
 
-                     // Show the boxes now
-                     document.getElementById('weather-box').classList.add('show');
-                     document.getElementById('search-box').classList.add('show');
+                    // Show the boxes now
+                    document.getElementById('weather-box').classList.add('show');
+                    document.getElementById('search-box').classList.add('show');
 
                     // Update the HTML with the fetched data
                     document.getElementById('location').textContent = `${iataCode}`;
@@ -108,6 +117,10 @@ function getWeather() {
                     document.getElementById('weather-icon').classList.add('fas', weatherIcon); // Changed formatting of this to match the other elements
                 })
                 .catch(error => console.error('Error fetching weather data:', error));
+        
+            } else {
+                console.log('No airport found for the provided code.');
+              }
     })
     .catch(error => console.error('Error fetching coordinates:', error));
 }
