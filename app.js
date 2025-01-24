@@ -60,17 +60,18 @@ const weatherIconMap = {
     
 };
 
-//const iataCode = 'LHR';
+// Restructure into functions to allow for easier testing
+function validateIataCode(iataCode) {
+    const iataCodePattern = /^[A-Z]{3}$/;
+    return iataCodePattern.test(iataCode.toUpperCase());
+}
 
 // User can now type in airport code
 // Wrapped in a function so it can be read by HTML file button
 function getWeather() {
-    const iataCode = document.getElementById('airport-code').value.toUpperCase();  // convert to uppercase
+    const iataCode = document.getElementById('airport-code').value.toUpperCase();
 
-    // Regex to match exactly 3 uppercase letters
-    const iataCodePattern = /^[A-Z]{3}$/;
-
-    if (!iataCodePattern.test(iataCode)) {
+    if (!validateIataCode(iataCode)) {
         // Display an error message if the input is not a valid airport code
         document.getElementById('error-message').textContent = `Please enter a valid 3-letter IATA airport code.`;
         document.getElementById('error-message').style.display = 'block';
@@ -86,7 +87,6 @@ function getWeather() {
     };
 
     fetch(`https://us1.locationiq.com/v1/search?q=${iataCode}&key=pk.7888b0670eb6596351a70be6dc050408&format=json`, options)
-
     .then(response => response.json())
     .then(data => {
         const airport = data.find(place => place.class === 'aeroway' && place.type === 'aerodrome'); //Limit search to airports only
@@ -128,3 +128,5 @@ function getWeather() {
     })
     .catch(error => console.error('Error fetching coordinates:', error));
 }
+
+module.exports = {validateIataCode};

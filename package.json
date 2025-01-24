@@ -1,0 +1,26 @@
+{
+  "name": "se_sum1",
+  "version": "1.0.0",
+  "description": "## Project Description For the Summative One assignment, I have chosen to create a web app that displays the weather for any worldwide airport. This can be used by colleagues in various roles such as schedule manager who may need to make proactive changes due to adverse weather conditions.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/green-eggz/se_sum1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/green-eggz/se_sum1/issues"
+  },
+  "homepage": "https://github.com/green-eggz/se_sum1#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
