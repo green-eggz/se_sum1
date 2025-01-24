@@ -37,10 +37,19 @@ body {
 
 /* Heading style */
 #heading {
-    font-size: 75px;
+    font-size: 78px;
     font-family: var(--heading-font); /* Apply the heading font */
     text-align: center;
+    margin: 0;
 }
+
+#subheading {
+    font-size: 24px;
+    font-family: var(--heading-font);
+    text-align: center;
+    margin: 0 0 20px 0;
+    
+  }
 
 /* Styling for the weather icon */
 #weather-icon {
