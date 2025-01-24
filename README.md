@@ -12,10 +12,10 @@
 ## <h2 id="introduction">🌞 Introduction</h2>
 
 ### Project Description
-For the Software Engineering summative one assignment, I have developed a web application designed to provide real-time weather information for any airport around the world. There are two different users in mind for this. The app is aimed at two key user groups:
+For the Software Engineering summative one assignment, I have developed a web application designed to provide real-time weather information for any airport around the world. The app is aimed at two different user groups:
 
 **Airline Staff** ✈️ \
-This user group includes professionals such as schedule managers who need to make quick, data-driven decisions regarding flight schedules and airport operations. By accessing weather data, they can take proactive steps in response to adverse weather conditions, such as proactive cancellations, to minimise operational disruption.
+This user group includes professionals such as schedule managers who need to make quick, data-driven decisions regarding flight schedules and airport operations. By accessing weather data, they can take steps in responding to adverse weather conditions, such as proactive cancellations, to minimise operational disruption.
 
 **Passengers** 🧳 \
 This user group includes travelers who may wish to check the weather conditions at their destination airport, before or during their flight. By providing accurate weather information, passengers can better prepare for their arrival such as by choosing appropriate clothing or planning for potential delays. 
@@ -36,10 +36,10 @@ This is a list of all of the essential tools used to design, develop and deploy 
 
 ## <h2 id="project-management">🛠️ Project Management</h2>
 ### Agile Approach
-To develop Skycast, I adopted an [Agile](https://www.atlassian.com/agile) approach, breaking the project down into manageable deliverables steps to maintain focus on the deadline. I had a 6-week timeline from initial scoping to final app deployment which I split into 2-week sprints, following the [Scrum](https://www.atlassian.com/agile/scrum) principles. Each sprint had a clear sprint goal and work was divided into the following components:
+To develop Skycast, I adopted an [Agile](https://www.atlassian.com/agile) approach, breaking the project down into manageable steps to maintain focus on the deadline. I had a 6-week timeline from initial scoping to final app deployment which I split into 2-week sprints, following the [Scrum](https://www.atlassian.com/agile/scrum) principles. Each sprint had a clear sprint goal and work was divided into the following components:
 
-**Epics** - high level goals such as ‘Design the app’ or ‘Build the app’ \
-**Features** - specific functionalities of the app that contribute to achieving the Epic such as ‘Search functionality \
+**Epics** - high level goals such as 'Design the app' or 'Build the app' \
+**Features** - specific functionalities of the app that contribute to achieving the Epic such as 'Search functionality' \
 **Stories** - requirements defined from the user’s perspective for each feature \
 **Tasks** - the most granular level, broken down into individual actions and assigned story points to estimate time required
 
@@ -50,7 +50,7 @@ For this project, I used [Github Projects](https://github.com/users/green-eggz/p
 1. Learn the basics of HTML, CSS, JavaScript, and Github. 
 2. Create prototype for chosen project 
   
-During this sprint, I used Canvas and external resources to learn the fundamentals of software engineering and web development. I also brainstormed project ideas that could be achievable in the 6-week timeframe and relevant to my workplace (Figure 1). Once I had selected the best idea, I developed a working prototype of the web app, more details of which can be found in the design section. 
+During this sprint, I used Canvas and external resources to learn the fundamentals of software engineering and web development. I also brainstormed project ideas that could be achievable in the 6-week timeframe and were relevant to my workplace (Figure 1). Once I had selected the best idea, I developed a working prototype of the web app, more details of which can be found in the design section. 
 
 <img src="docs/brainstorm.png" width="50%"> \
 *Figure 1: Brainstorming mind map*
@@ -67,7 +67,7 @@ This sprint was dedicated to the core development of the web app. There were fou
 2. Deploy the app
 3. Create comprehensive documentation
 
-In the final sprint, I focused on finalising the app so it could be deployed. This included testing the app, publishing it using Github Pages, and creating all of the documentation (including this README file). 
+In the last sprint, I focused on finalising the app so it could be deployed. This included testing the app, publishing it using Github Pages, and creating all of the documentation (including this README file). 
 
 <img src="docs/kanban.png" width="70%"> \
 *Figure 2: Final state of kanban board*
@@ -90,7 +90,7 @@ To ensure the app is accessible to as many users as possible, I have incorporate
 - Use large and clear font size
 - Design for multiple device types 
 - Transcript or text descriptions for images
-- Make html element names useful for screen readers
+- Make HTML element names useful for screen readers
 - Use tools for accessibility testing
 
 ### Design Choices
@@ -117,7 +117,7 @@ The app uses weather icons from the [Font Awesome](https://fontawesome.com/icons
 ## <h2 id="development">💻 Development</h2>
 ### APIs
 #### Weather API
-For the weather data, I chose to use the [Open-Meteo](https://open-meteo.com/) API because it met all of my requirements. Firstly, it does not require an API key which made development even easier for me to use as a beginner. The API also supports up to 10,000 calls per day which is ideal for my app as it could be delivered to many users. Finally, it takes longitude and latitude coordinates as the input which ensures the weather data can be specific to individual airports. 
+For the weather data, I chose to use the [Open-Meteo](https://open-meteo.com/) API because it met all of my requirements. Firstly, it does not require an API key which made development even easier for me as a beginner. The API also supports up to 10,000 calls per day which is ideal for my app as it could be delivered to many users. Finally, it takes longitude and latitude coordinates as the input which ensures the weather data can be specific to individual airports. 
 
 The Open-Meteo API returns weather codes that represent various weather conditions such as clear skies, thunderstorms, snow, etc. To enhance the user experience, I mapped these codes to readable descriptions and weather icons using information provided in the Open-Meto documentation (Figure 4). 
 
@@ -187,7 +187,7 @@ Skycast is a web application that provides real-time weather information for air
 - Simply type in a new airport code in the search bar to start again! 
 
 #### 🚩 Troubleshooting
-**'No airport found for the provided code:'** Ensure you enter a correct 3-character IATA airport code. For example, "XXX" is not a valid code. \
+**'No airport found for the provided code:'** Ensure you enter a correct 3-character IATA airport code. For example, 'XXX' is not a valid code. \
 **'Please enter a valid 3-letter IATA airport code':** Ensure that you only enter 3 letters, any other combination of characters including numbers or more than 3 letters will not work. 
 
 ### Technical Documentation
