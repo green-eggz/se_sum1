@@ -26,8 +26,8 @@ body {
 
 /* Container that holds everything */
 #container {
-    width: 100%;              /* Optional: make the container take full width */
-    max-width: 600px;         /* Optional: max width for content */
+    width: 100%; 
+    max-width: 600px; 
     padding: 20px;
     text-align: center;       /* Centers text inside the container */
     display: flex; /* Set the container to be a flexible container */
@@ -53,27 +53,27 @@ body {
 
 /* Styling for the weather icon */
 #weather-icon {
-    font-size: 62px;          /* Make the icon larger */
-    margin-top: 10px;          /* Adds space between the icon and text */
+    font-size: 62px; /* Make the icon larger */
+    margin-top: 10px; /* Adds space between the icon and text */
     color:var(--accent-colour-2) ;
 }
 
 /* Styling for search container */
 #search-box {
     background: #f9f9f9;
-    padding: 20px;  /* Set padding to 20 */
-    border-radius: 8px;   /* Round bottom corners only */
-    width: 350px; /* Set container width to 300 */
-    flex-direction: column; /* This makes the elements stack vertically */
-    align-items: center; /* Center items horizontally */
-    gap: 10px; /* Adds space between input and button */
+    padding: 20px;
+    border-radius: 8px; 
+    width: 350px; 
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px; 
 }
 
 /* Styling for airport code input box */
 #airport-code {
     padding: 10px;
     width: 200px;
-    background-color: #f9f9f9; /* white backgroun */
+    background-color: #f9f9f9;
     border: 1px solid var(--accent-colour-1);
     border-radius: 8px;
     margin-bottom: 10px;
@@ -95,29 +95,29 @@ body {
     visibility: hidden;
     background-color: #f9f9f9;
     overflow: hidden;
-    padding: 20px;  /* Set padding to 20 */
+    padding: 20px;
     border-radius: 0 0 8px 8px;   /* Round bottom corners only */
-    width: 350px; /* Set container width to 300 */
-    flex-direction: column; /* This makes the elements stack vertically */
-    align-items: center; /* Center items horizontally */
+    width: 350px;
+    flex-direction: column;
+    align-items: center; 
 }
 
 /* Styling for individual weather info */
 #weather-box p {
-    font-size: 24px;        /* Make the text a bit larger */
-    margin: 10px 0;           /* Adds space between paragraphs */
+    font-size: 24px;       
+    margin: 10px 0; /* Adds space between paragraphs */
 }
 
 /* When the weather box is visible */
 #search-box.show {
-    border-radius: 8px 8px 0 0;     /* Round top corners only */
+    border-radius: 8px 8px 0 0; /* Round top corners only */
 }
 
 /* Show weather box when it's not hidden */
 #weather-box.show {
     visibility: visible;
     opacity: 1;
-    max-height: 500px; /* Adjust as needed */
+    max-height: 500px;
 }
 
 #error-message {

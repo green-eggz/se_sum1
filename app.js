@@ -103,9 +103,8 @@ function getWeather() {
                     const weatherCode = weatherData.current_weather.weathercode; // Weather condition code
                     const weatherDescription = weatherCodeMap[weatherCode] // Map weather code to description
                     const weatherIcon = weatherIconMap[weatherCode] // Map weather code to icon
-                    
 
-                    // Show the boxesn now
+                    // Show the boxes now
                     document.getElementById('weather-box').classList.add('show');
                     document.getElementById('search-box').classList.add('show');
 
